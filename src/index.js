@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import Player from './lib/player';
+import PlayerBlast from './lib/player_blast';
 
 let _player;
 const _playerSpeed = 2;
@@ -16,16 +17,9 @@ function preload() {
 }
 
 function create() {
-  Player.create(this);
+  _player = Player.create(this);
 
-  _player = this.add.existing(
-    new Player(this, 400, 300)
-  ).play(Player.anims.default);
-
-  _playerBlasts = this.add.group({
-    defaultKey: 'player-blast',
-    maxSize: 100
-  });
+  _playerBlasts = PlayerBlast.createGroup(this);
 
   const keyCodes = Phaser.Input.Keyboard.KeyCodes;
   _keys = {

@@ -15,15 +15,17 @@ class Player extends Phaser.GameObjects.Sprite {
   }
 
   static get speed() {
-    return 3;
+    return 5;
   }
 
   static preload(scene) {
     this.anims.images.forEach(image => scene.load.image(image));
   }
 
-  static create(scene) {
+  static create(scene, x=400, y=300) {
     this.anims.list.forEach(anim => scene.anims.create(anim));
+    const player = new Player(scene, x, y);
+    return scene.add.existing(player).play(Player.anims.default);
   }
 }
 

@@ -12,13 +12,11 @@ function preload() {
   this.load.setBaseURL('http://localhost:8080');
 
   Player.preload(this);
-
-  this.load.image('player-blast', 'assets/images/sprites/player-blast.png');
+  PlayerBlast.preload(this);
 }
 
 function create() {
   _player = Player.create(this);
-
   _playerBlasts = PlayerBlast.createGroup(this);
 
   const keyCodes = Phaser.Input.Keyboard.KeyCodes;
@@ -56,16 +54,6 @@ function update(time, delta) {
       _playerBlastTime -= delta;
     }
   }
-
-  _playerBlasts.getChildren().forEach(blast => {
-    if (blast.active) {
-      blast.y -= 5;
-    }
-
-    if (blast.y < 100) {
-      blast.destroy();
-    }
-  });
 }
 
 const game = new Phaser.Game({

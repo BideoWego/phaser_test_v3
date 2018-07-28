@@ -27,6 +27,24 @@ class Player extends Phaser.GameObjects.Sprite {
     const player = new Player(scene, x, y);
     return scene.add.existing(player).play(Player.anims.default);
   }
+
+  update(time, delta, controller) {
+    if (controller.up.isDown) {
+      this.y -= Player.speed;
+    }
+
+    if (controller.down.isDown) {
+      this.y += Player.speed;
+    }
+
+    if (controller.left.isDown) {
+      this.x -= Player.speed;
+    }
+
+    if (controller.right.isDown) {
+      this.x += Player.speed;
+    }
+  }
 }
 
 

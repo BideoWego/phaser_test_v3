@@ -9,7 +9,7 @@
     "build": "npx webpack",
     "watch": "npx webpack --watch",
     "start": "npx webpack-dev-server",
-    "deploy": "surge dist"
+    "deploy": "npm run build && surge dist"
   },
   "author": "",
   "license": "ISC",

@@ -8,7 +8,7 @@ let _enemy;
 let _controller;
 
 function preload() {
-  this.load.setBaseURL('http://localhost:8080');
+  this.load.setBaseURL(window.location.href);
 
   Player.preload(this);
   Enemy.preload(this);

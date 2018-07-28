@@ -8,7 +8,7 @@
     "test": "nodemon --exec \"npx mocha-webpack -i false -w 'tests/**/*.js'\"",
     "build": "npx webpack",
     "watch": "npx webpack --watch",
-    "start": "npx webpack-dev-server --open",
+    "start": "npx webpack-dev-server",
     "deploy": "surge dist"
   },
   "author": "",

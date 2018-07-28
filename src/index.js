@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import Player from './lib/player';
 
 let _player;
 const _playerSpeed = 2;
@@ -9,32 +10,17 @@ let _keys = {};
 function preload() {
   this.load.setBaseURL('http://localhost:8080');
 
-  this.load.image('player1', 'assets/images/sprites/player1.png');
-  this.load.image('player2', 'assets/images/sprites/player2.png');
-  this.load.image('player3', 'assets/images/sprites/player3.png');
-  this.load.image('player4', 'assets/images/sprites/player4.png');
+  Player.preload(this);
 
   this.load.image('player-blast', 'assets/images/sprites/player-blast.png');
 }
 
 function create() {
-  this.anims.create({
-    key: 'player.default',
-    frames: [
-      { key: 'player1' },
-      { key: 'player2' },
-      { key: 'player3' },
-      { key: 'player4' }
-    ],
-    frameRate: 10,
-    repeat: -1
-  });
+  Player.create(this);
 
-  _player = this.make.sprite({
-    x: 400,
-    y: 300,
-    key: 'player1'
-  }).play('player.default');
+  _player = this.add.existing(
+    new Player(this, 400, 300)
+  ).play(Player.anims.default);
 
   _playerBlasts = this.add.group({
     defaultKey: 'player-blast',
@@ -79,10 +65,10 @@ function update(time, delta) {
 
   _playerBlasts.getChildren().forEach(blast => {
     if (blast.active) {
-      blast.y -= 3;
+      blast.y -= 5;
     }
 
-    if (blast.y < 0) {
+    if (blast.y < 100) {
       blast.destroy();
     }
   });

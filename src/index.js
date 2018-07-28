@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import Player from './lib/player';
 import PlayerBlast from './lib/player_blast';
+import Controller from './lib/controller';
 
 let _player;
 const _playerSpeed = 2;
@@ -18,15 +19,7 @@ function preload() {
 function create() {
   _player = Player.create(this);
   _playerBlasts = PlayerBlast.createGroup(this);
-
-  const keyCodes = Phaser.Input.Keyboard.KeyCodes;
-  _keys = {
-    up: this.input.keyboard.addKey(keyCodes.UP),
-    down: this.input.keyboard.addKey(keyCodes.DOWN),
-    left: this.input.keyboard.addKey(keyCodes.LEFT),
-    right: this.input.keyboard.addKey(keyCodes.RIGHT),
-    space: this.input.keyboard.addKey(keyCodes.SPACE)
-  }
+  _keys = Controller.create(this);
 }
 
 function update(time, delta) {

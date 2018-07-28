@@ -1,18 +1,22 @@
 import Phaser from 'phaser';
 import Player from './lib/player';
+import Enemy from './lib/enemy';
 import Controller from './lib/controller';
 
 let _player;
+let _enemy;
 let _controller;
 
 function preload() {
   this.load.setBaseURL('http://localhost:8080');
 
   Player.preload(this);
+  Enemy.preload(this);
 }
 
 function create() {
   _player = Player.create(this);
+  _enemy = Enemy.create(this);
   _controller = Controller.create(this);
 }
 

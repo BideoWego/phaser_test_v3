@@ -1,11 +1,7 @@
 import assets from '../assets';
 
 
-class PlayerAnims {
-  static get frameRate() {
-    return 10;
-  }
-
+class PlayerAssets {
   static get default() {
     return 'player.default';
   }
@@ -26,12 +22,12 @@ class PlayerAnims {
     }));
   }
 
-  static get list() {
+  static get animations() {
     return [
       {
         key: this.default,
         frames: this.frames.map(frame => ({ key: frame })),
-        frameRate: this.frameRate,
+        frameRate: 10,
         repeat: -1
       }
     ]
@@ -43,4 +39,4 @@ class PlayerAnims {
 }
 
 
-export default PlayerAnims;
+export default PlayerAssets;

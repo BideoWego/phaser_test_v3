@@ -27,7 +27,7 @@ class PlayerBlast extends Phaser.GameObjects.Sprite {
   update() {
     if (this.active) {
       this.y -= PlayerBlast.speed;
-      if (this.y < 100) {
+      if (this.y < -10) {
         this.destroy();
       }
     }

@@ -22,6 +22,7 @@ function create() {
 
 function update(time, delta) {
   _player.update(time, delta, _controller);
+  _enemy.update(time, delta);
 }
 
 const game = new Phaser.Game({

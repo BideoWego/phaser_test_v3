@@ -5,11 +5,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    "main": './src/index.js',
+    "space-shooter": './src/modules/space-shooter/index.js'
+  },
   mode: 'development',
   output: {
-    publicPath: '/',
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'inline-source-map',
@@ -29,7 +31,14 @@ module.exports = {
     ]),
     new HtmlWebpackPlugin({
       title: 'Phaser Test v3',
-      template: './src/index.handlebars'
+      template: './src/index.handlebars',
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Space Shooter',
+      template: './src/example.handlebars',
+      filename: 'space-shooter/index.html',
+      chunks: ['space-shooter']
     })
   ],
   module: {

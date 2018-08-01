@@ -7,6 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: {
     "main": './src/index.js',
+    "actions/grid-align": "./src/modules/actions/grid_align.js",
     "space-shooter": './src/modules/space-shooter/index.js'
   },
   mode: 'development',
@@ -29,11 +30,22 @@ module.exports = {
         from: 'CNAME'
       }
     ]),
+    // index
     new HtmlWebpackPlugin({
       title: 'Phaser Test v3',
       template: './src/index.handlebars',
       chunks: ['main']
     }),
+
+    // actions/grid-align
+    new HtmlWebpackPlugin({
+      title: 'Actions - Grid Align',
+      template: './src/example.handlebars',
+      filename: 'actions/grid-align/index.html',
+      chunks: ['actions/grid-align']
+    }),
+
+    // space-shooter
     new HtmlWebpackPlugin({
       title: 'Space Shooter',
       template: './src/example.handlebars',

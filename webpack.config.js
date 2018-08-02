@@ -9,6 +9,7 @@ module.exports = {
     "main": './src/index.js',
     "actions/grid-align": './src/modules/actions/grid_align.js',
     "actions/inc-x-layers": './src/modules/actions/inc_x_layers.js',
+    "actions/place-on-a-circle-multi": './src/modules/actions/place_on_a_circle_multi.js',
     "space-shooter": './src/modules/space-shooter/index.js'
   },
   mode: 'development',
@@ -51,6 +52,13 @@ module.exports = {
       template: './src/example.handlebars',
       filename: 'actions/inc-x-layers/index.html',
       chunks: ['actions/inc-x-layers']
+    }),
+    // actions/place-on-a-circle-multi
+    new HtmlWebpackPlugin({
+      title: 'Actions - Place on a Circle Multi',
+      template: './src/example.handlebars',
+      filename: 'actions/place-on-a-circle-multi/index.html',
+      chunks: ['actions/place-on-a-circle-multi']
     }),
 
     // space-shooter

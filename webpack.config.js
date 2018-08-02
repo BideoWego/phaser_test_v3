@@ -10,6 +10,7 @@ module.exports = {
     "actions/grid-align": './src/modules/actions/grid_align.js',
     "actions/inc-x-layers": './src/modules/actions/inc_x_layers.js',
     "actions/place-on-a-circle-multi": './src/modules/actions/place_on_a_circle_multi.js',
+    "actions/place-on-a-circle-reversed": './src/modules/actions/place_on_a_circle_reversed.js',
     "space-shooter": './src/modules/space-shooter/index.js'
   },
   mode: 'development',
@@ -59,6 +60,13 @@ module.exports = {
       template: './src/example.handlebars',
       filename: 'actions/place-on-a-circle-multi/index.html',
       chunks: ['actions/place-on-a-circle-multi']
+    }),
+    // actions/place-on-a-circle-reversed
+    new HtmlWebpackPlugin({
+      title: 'Actions - Place on a Circle Reversed',
+      template: './src/example.handlebars',
+      filename: 'actions/place-on-a-circle-reversed/index.html',
+      chunks: ['actions/place-on-a-circle-reversed']
     }),
 
     // space-shooter

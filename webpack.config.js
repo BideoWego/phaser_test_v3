@@ -14,6 +14,7 @@ module.exports = {
     "actions/place-on-a-circle": './src/modules/actions/place_on_a_circle.js',
     "actions/place-on-ellipse": './src/modules/actions/place_on_ellipse.js',
     "actions/place-on-line": './src/modules/actions/place_on_line.js',
+    "actions/place-on-part-of-a-circle": './src/modules/actions/place_on_part_of_a_circle.js',
     "space-shooter": './src/modules/space-shooter/index.js'
   },
   mode: 'development',
@@ -91,6 +92,13 @@ module.exports = {
       template: './src/example.handlebars',
       filename: 'actions/place-on-line/index.html',
       chunks: ['actions/place-on-line']
+    }),
+    // actions/place-on-part-of-a-circle
+    new HtmlWebpackPlugin({
+      title: 'Actions - Place on Part of a Circle',
+      template: './src/example.handlebars',
+      filename: 'actions/place-on-part-of-a-circle/index.html',
+      chunks: ['actions/place-on-part-of-a-circle']
     }),
 
     // space-shooter

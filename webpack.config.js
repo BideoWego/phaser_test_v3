@@ -15,6 +15,7 @@ module.exports = {
     "actions/place-on-ellipse": './src/modules/actions/place_on_ellipse.js',
     "actions/place-on-line": './src/modules/actions/place_on_line.js',
     "actions/place-on-part-of-a-circle": './src/modules/actions/place_on_part_of_a_circle.js',
+    "actions/place-on-rectangle-shift": './src/modules/actions/place_on_rectangle_shift.js',
     "space-shooter": './src/modules/space-shooter/index.js'
   },
   mode: 'development',
@@ -99,6 +100,13 @@ module.exports = {
       template: './src/example.handlebars',
       filename: 'actions/place-on-part-of-a-circle/index.html',
       chunks: ['actions/place-on-part-of-a-circle']
+    }),
+    // actions/place-on-rectangle-shift
+    new HtmlWebpackPlugin({
+      title: 'Actions - Place on Rectable Shift',
+      template: './src/example.handlebars',
+      filename: 'actions/place-on-rectangle-shift/index.html',
+      chunks: ['actions/place-on-rectangle-shift']
     }),
 
     // space-shooter

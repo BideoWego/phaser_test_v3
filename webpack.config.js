@@ -12,6 +12,7 @@ module.exports = {
     "actions/place-on-a-circle-multi": './src/modules/actions/place_on_a_circle_multi.js',
     "actions/place-on-a-circle-reversed": './src/modules/actions/place_on_a_circle_reversed.js',
     "actions/place-on-a-circle": './src/modules/actions/place_on_a_circle.js',
+    "actions/place-on-ellipse": './src/modules/actions/place_on_ellipse.js',
     "space-shooter": './src/modules/space-shooter/index.js'
   },
   mode: 'development',
@@ -75,6 +76,13 @@ module.exports = {
       template: './src/example.handlebars',
       filename: 'actions/place-on-a-circle/index.html',
       chunks: ['actions/place-on-a-circle']
+    }),
+    // actions/place-on-ellipse
+    new HtmlWebpackPlugin({
+      title: 'Actions - Place on Ellipse',
+      template: './src/example.handlebars',
+      filename: 'actions/place-on-ellipse/index.html',
+      chunks: ['actions/place-on-ellipse']
     }),
 
     // space-shooter

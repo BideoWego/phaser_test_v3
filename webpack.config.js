@@ -17,6 +17,7 @@ module.exports = {
     "actions/place-on-part-of-a-circle": './src/modules/actions/place_on_part_of_a_circle.js',
     "actions/place-on-rectangle-shift": './src/modules/actions/place_on_rectangle_shift.js',
     "actions/place-on-rectangle": './src/modules/actions/place_on_rectangle.js',
+    "actions/place-on-triangle": './src/modules/actions/place_on_triangle.js',
     "space-shooter": './src/modules/space-shooter/index.js'
   },
   mode: 'development',
@@ -115,6 +116,13 @@ module.exports = {
       template: './src/example.handlebars',
       filename: 'actions/place-on-rectangle/index.html',
       chunks: ['actions/place-on-rectangle']
+    }),
+    // actions/place-on-trinagle
+    new HtmlWebpackPlugin({
+      title: 'Actions - Place on Triangle',
+      template: './src/example.handlebars',
+      filename: 'actions/place-on-triangle/index.html',
+      chunks: ['actions/place-on-triangle']
     }),
 
     // space-shooter
